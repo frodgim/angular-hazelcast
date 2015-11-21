@@ -6,6 +6,7 @@ angular.module('WebCacheApp', [ 'frontendServices' ]).controller(
 					$scope.users = {};
 					$scope.totalrows = 0;
 					$scope.getUsers = function() {
+						setAppReady(false);
 						UserService.getUsers($scope.vm.name, $scope.vm.phone,
 								$scope.vm.company, $scope.vm.iban).then(
 								function(data) {
@@ -13,19 +14,17 @@ angular.module('WebCacheApp', [ 'frontendServices' ]).controller(
 										$scope.users = data.userList;
 										$scope.totalrows = data.count;
 										
-										markAppAsInitialized();
+										setAppReady(true);
 									}
 								},
 			                    function (errorMessage) {
-			                        markAppAsInitialized();
+									setAppReady(true);
 			                    });
 
 					}
 					
-					function markAppAsInitialized() {
-		                if ($scope.vm.appReady == undefined) {
-		                    $scope.vm.appReady = true;
-		                }
+					function setAppReady(state) {
+						$scope.vm.appReady = state;
 		            }
 				} 
 		]);
