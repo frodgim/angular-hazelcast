@@ -8,36 +8,28 @@
 <link rel="stylesheet"
 	href="resources/bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
-<body ng-app="WebCacheApp">
-	<!-- 
+<body class="mytheme" ng-app="WebCacheApp">
+	
 	<div class="please-wait-dialog" ng-hide="vm.appReady">
-		<img class="please-wait-spinner" src="resources/img/loading.gif">
+		<img class="please-wait-spinner" src="/resources/img/loading.gif">
 	</div>
- -->
+	
 	<div class="container">
 
 		<h2>Hazelcast Web user cache</h2>
 
 		<div ng-controller="MainCtrl">
 			<div class="row filters">
-				<label for="nameFilter">Name:</label> 
-				
-				<input class="form-control"
+				<label for="nameFilter">Name:</label> <input class="form-control"
 					type="text" name="nameFilter" placeholder="Name..."
-					ng-model="vm.name"> 
-				
-				<label for="phoneFilter">Phone:</label>
-				
+					ng-model="vm.name"> <label for="phoneFilter">Phone:</label>
+
 				<input class="form-control" type="text" name="phoneFilter"
-					placeholder="Phone..." ng-model="vm.phone">
-				<label for="companyFilter">Company:</label> 
-				
-				<input class="form-control"
+					placeholder="Phone..." ng-model="vm.phone"> <label
+					for="companyFilter">Company:</label> <input class="form-control"
 					type="text" name="companyFilter" placeholder="Company..."
-					ng-model="vm.company">
-				
-				<label for="ibanFilter">IBAN:</label>
-				
+					ng-model="vm.company"> <label for="ibanFilter">IBAN:</label>
+
 				<input class="form-control" type="text" name="ibanFilter"
 					placeholder="IBAN..." ng-model="vm.iban">
 
@@ -45,6 +37,10 @@
 			<div class="row buttonsbar">
 				<button class="btn btn-primary" name="filterUserButton"
 					value="Filter" ng-click="getUsers()">Filter</button>
+			</div>
+
+			<div class="row">
+				<span>It was retrieved {{totalrows}} rows</span>
 			</div>
 
 			<div class="row user-list">
