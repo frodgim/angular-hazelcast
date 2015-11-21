@@ -55,8 +55,15 @@ public class DevelopmentConfiguration {
         jpaProperties.put("hibernate.show_sql", "true");
         jpaProperties.put("hibernate.format_sql", "true");
         jpaProperties.put("hibernate.use_sql_comments", "true");
-        //jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
+        jpaProperties.put("hibernate.cache.use_second_level_cache", "true");
+        jpaProperties.put("hibernate.cache.use_query_cache", "true");
+        jpaProperties.put("hibernate.cache.region.factory_class", "com.hazelcast.hibernate.HazelcastCacheRegionFactory");
+        jpaProperties.put("hibernate.cache.hazelcast.use_native_client", "true");
+        jpaProperties.put("hibernate.cache.hazelcast.native_client_address", "127.0.0.1");
+        jpaProperties.put("hibernate.cache.hazelcast.native_client_group", "dev");
+        jpaProperties.put("hibernate.cache.hazelcast.native_client_password", "dev-pass");
+        
         entityManagerFactoryBean.setJpaPropertyMap(jpaProperties);
 
         return entityManagerFactoryBean;

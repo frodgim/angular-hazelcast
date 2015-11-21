@@ -49,7 +49,10 @@
     <logger name="org.hibernate.type">
         <level value="error"/>
     </logger>
-
+	
+	<logger name="com.hazelcast">
+        <level value="info"/>
+    </logger>
     <root>
         <priority value="warn"/>
         <appender-ref ref="console"/>

@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hazelcast user cache</title>
-<link rel="stylesheet" href="resources/css/main.css">
-<link rel="stylesheet"
-	href="resources/bower_components/bootstrap/dist/css/bootstrap.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hazelcast user cache</title>
+	<link rel="stylesheet" href="resources/css/main.css">
+	<link rel="stylesheet"
+		href="resources/bower_components/bootstrap/dist/css/bootstrap.css">
+	<script type="text/javascript"
+		src="resources/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript"
+		src="resources/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="resources/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript"
+		src="resources/js/frontend-controllers.js"></script>
+	<script type="text/javascript" src="resources/js/frontend-services.js"></script>
 </head>
 <body class="mytheme" ng-app="WebCacheApp">
-	
-	<div class="please-wait-dialog" ng-hide="vm.appReady">
-		<img class="please-wait-spinner" src="/resources/img/loading.gif">
-	</div>
-	
 	<div class="container">
 
 		<h2>Hazelcast Web user cache</h2>
 
 		<div ng-controller="MainCtrl">
+			<div class="please-wait-dialog" ng-hide="appReady">
+				<img class="please-wait-spinner" src="resources/img/loading.gif">
+			</div>
 			<div class="row filters">
 				<label for="nameFilter">Name:</label> <input class="form-control"
 					type="text" name="nameFilter" placeholder="Name..."
@@ -40,9 +47,8 @@
 			</div>
 
 			<div class="row">
-				<span>It was retrieved {{totalrows}} rows</span>
+				<span>{{totalItems}} rows in {{timeLoad}} ms.</span>
 			</div>
-
 			<div class="row user-list">
 
 				<table class="table">
@@ -67,15 +73,7 @@
 		</div>
 
 	</div>
-	<script type="text/javascript"
-		src="resources/bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript"
-		src="resources/bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="resources/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	<script type="text/javascript"
-		src="resources/js/frontend-controllers.js"></script>
-	<script type="text/javascript" src="resources/js/frontend-services.js"></script>
+
 
 </body>
 </html>
