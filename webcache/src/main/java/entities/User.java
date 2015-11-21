@@ -1,19 +1,26 @@
 package entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-
-
-
 @Entity
-@Table(name = "USERS")
-
+@Table(name = "Users")
 public class User extends AbstractEntity{
 
+	public User(){
+		
+	}
+	@Column(name="Name")
 	private String name;
+	
+	@Column(name="Phone")
 	private String phone; 
+	
+	@Column(name="Company")
 	private String company;
+	
+	@Column(name="IBAN")
 	private String iban;
 	
 	public User(String name, String phone, String company, String iban) {

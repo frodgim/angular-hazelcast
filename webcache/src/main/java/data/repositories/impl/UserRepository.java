@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 import data.repositories.contracts.IUserRepository;
 import entities.User;
 
-@Repository(value = "UserRepository")
-public class UserRepository implements IUserRepository {
+@Repository
+public class UserRepository{
 
 	@PersistenceContext
 	private EntityManager em;
@@ -22,21 +22,21 @@ public class UserRepository implements IUserRepository {
 		String queryString = "select u from User u where 1=1 ";
 		if(name != null)
 		{
-			queryString += " and name = :name ";
+			queryString += " and name like :name ";
 		}
 		if(phone != null)
 		{
-			queryString += " and phone = :phone ";
+			queryString += " and phone like :phone ";
 		}
 		
 		if(company != null)
 		{
-			queryString += " and company = :company ";
+			queryString += " and company like :company ";
 		}
 		
 		if(iban != null)
 		{
-			queryString += " and iban = :iban ";
+			queryString += " and iban like :iban ";
 		}
 
 		
@@ -44,21 +44,21 @@ public class UserRepository implements IUserRepository {
 		
 		if(name != null)
 		{
-			query.setParameter("name", name);
+			query.setParameter("name", "%" + name + "%");
 		}
 		if(phone != null)
 		{
-			query.setParameter("phone", phone);
+			query.setParameter("phone", "%" + phone+ "%");
 		}
 		
 		if(company != null)
 		{
-			query.setParameter("company", company);
+			query.setParameter("company", "%" + company + "%");
 		}
 		
 		if(iban != null)
 		{
-			query.setParameter("iban", iban);
+			query.setParameter("iban", "%" + iban + "%");
 		}
 		
 		
