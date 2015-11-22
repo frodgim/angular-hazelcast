@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import application.services.impl.UserService;
+import application.services.contracts.IUserService;
 import application.services.messages.GetUsersByCriteriaResponse;
 
 @Controller
@@ -17,7 +17,7 @@ import application.services.messages.GetUsersByCriteriaResponse;
 public class UserController {
 	
 	@Autowired
-	UserService userService;
+	IUserService userService;
 	
 	@ResponseBody
     @ResponseStatus(HttpStatus.OK)

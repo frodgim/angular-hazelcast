@@ -23,9 +23,14 @@ angular.module('WebCacheApp', [ 'frontendServices' ]).controller('MainCtrl',
 								var t1 = performance.now();
 								$scope.timeLoad = parseInt(t1 - t0);
 							}
+							else{
+								console.error(data.message);
+								
+							}
 						},
 	                    function (errorMessage) {
 							setAppReady(true);
+							console.error(errorMessage);
 	                    });
 
 			}

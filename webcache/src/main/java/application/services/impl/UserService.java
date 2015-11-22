@@ -9,18 +9,16 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import application.base.BaseAppService;
 import application.services.contracts.IUserService;
 import application.services.messages.GetUsersByCriteriaResponse;
-import data.repositories.impl.UserRepository;
+import data.repositories.contracts.IUserRepository;
 import entities.User;
-import infrastructure.caching.impl.HazelcastApplicationCacheService;
 
 @Service
-public class UserService{
+public class UserService implements IUserService{
 
 	@Autowired
-	private UserRepository userRepository;
+	private IUserRepository userRepository;
 	
 	
 	@Transactional

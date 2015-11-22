@@ -12,7 +12,7 @@ import data.repositories.contracts.IUserRepository;
 import entities.User;
 
 @Repository
-public class UserRepository{
+public class UserRepository implements IUserRepository{
 
 	@PersistenceContext
 	private EntityManager em;
