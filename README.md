@@ -1,2 +1,2 @@
 # angular-hazelcast
-Esta version es una prueba completa con hazelcast, hibernate y angular
+Esta version es un proyecto test usando hazelcast, hibernate y angular
